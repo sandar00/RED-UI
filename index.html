@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED Project</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    :root {
+        --primary: #6A8CA3;
+        --accent: #9FB24A;
+        --cta: #D77C55;
+        --dark: #1E1E1E;
+        --light: #FFFFFF;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        color: var(--dark);
+    }
+
+    /* start nav bar */
+    .navbar {
+        background-color: #464141e4;
+        transition: background-color 0.3s, box-shadow 0.3s, padding 0.3s;
+        padding: 10px 0;
+    }
+
+    .navbar.scrolled {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 5px 0;
+        background-color: rgba(30, 30, 30, 0.95);
+    }
+
+    .navbar-brand img {
+        height: 25px;
+    }
+
+    .navbar-nav .nav-link {
+        color: var(--light) !important;
+        margin: 0 10px;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--cta) !important;
+    }
+
+    /* end nav bar */
+
+    /* start hero section */
+    .hero {
+        background: linear-gradient(135deg, rgba(55, 145, 205, 0.6), rgba(215, 124, 85, 0.6)), url('./img/BGPIC01.jpg') no-repeat center center/cover;
+        /* background: linear-gradient(135deg, var(--primary), var(--cta)), url('./img/BGPIC01.jpg') no-repeat center center/cover; */
+
+        color: var(--light);
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .hero p {
+        max-width: 600px;
+        margin: 20px auto;
+        font-size: 1.2rem;
+    }
+
+    .hero .container .btn-primary {
+        background-color: var(--cta);
+        border: none;
+        transition: 0.3s;
+    }
+
+    .hero .container .btn-primary:hover {
+        background-color: var(--accent);
+    }
+
+    /* end hero section */
+
+    /* start About */
+    .about {
+        padding: 80px 0;
+    }
+
+    .about img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* end About */
+
+    /* start Services */
+    .service-card {
+        height: 200px;
+        /* adjust card height */
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .service-card .overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .service-card h5 {
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    /* end Services */
+
+    /* start online-estimation */
+    .online-estimation {
+        background: linear-gradient(135deg, var(--primary), var(--cta));
+        color: var(--light);
+        border-radius: 12px;
+        margin: 40px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .online-estimation:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .online-estimation .btn-primary {
+        background-color: var(--light);
+        color: var(--dark);
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .online-estimation .btn-primary:hover {
+        background-color: var(--accent);
+        color: var(--light);
+    }
+
+    /* end online-estimation */
+
+    /* start partners and testimonials */
+
+    .partners-testimonials {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+    }
+
+    .partners-testimonials h2 {
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 40px;
+    }
+
+    .partners-testimonials h2.testimon {}
+
+    .partners-testimonials .row img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        filter: grayscale(0.1);
+        transition: transform 0.3s, filter 0.3s;
+        background-color: #d77c5579;
+        border-radius: 50%;
+    }
+
+    .partners-testimonials .row img:hover {
+        transform: scale(1.1);
+        filter: grayscale(0);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #d77c5579;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-size: 50%, 50%;
+    }
+
+
+    /* end partners and testimonials */
+
+    /* Contact */
+    .contact {
+        /* background-color: var(--primary); */
+        background: url('./img/BGPIC02_m.png') no-repeat center center/cover;
+
+        color: var(--light);
+        padding: 80px 0;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        border-radius: 8px;
+        border: none;
+        padding: 10px 15px;
+    }
+
+    /* end contact */
+
+    /*start Footer */
+    footer {
+        background-color: var(--dark);
+        color: var(--light);
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* end Footer */
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./img/cropped-Osbay-Logo-01.png" alt="Osbay Logo">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Modernize Your Website. Delight Your Users.</h1>
+            <p>We transform outdated websites into visually stunning, responsive, and interactive digital experiences
+                boosting engagement and reflecting your brand perfectly.</p>
+            <a href="#services" class="btn btn-primary btn-lg mt-3">See Our Work</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./img/MainImage_03.png" alt="About Us">
+                </div>
+                <div class="col-md-6">
+                    <h2>Remote Engineer Dispatch (R.E.D.)</h2>
+                    <p>At RED, we breathe new life into your existing website. Our team refines layouts,
+                        harmonizes colors, and enhances user experiences to create modern, professional, and engaging
+                        websites that truly reflect your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container text-center">
+            <h2 class="mb-5">Our Features</h2>
+            <div class="row g-4">
+
+                <!-- Programming -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/build_01.jpg'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Programming</h5>
+                            <p>We specialize in ASP.NET, PHP, JSP, HTML5, Android, and iOS development for robust and
+                                scalable applications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Website -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/EX_UI.png'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Website Development</h5>
+                            <p>Create responsive websites using Native code or WordPress, tailored to your business
+                                needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Online Shop -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/PJ_shop.png'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Online Shop</h5>
+                            <p>Set up e-commerce stores with seamless catalog, secure checkout, and smooth shopping
+                                experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Online Chat -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/PJ_chat.png'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Online Chat</h5>
+                            <p>Integrate live chat features to interact with your customers instantly and improve
+                                support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Video Call -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/PJ_call.png'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Video Call</h5>
+                            <p>Enable real-time video communication with clients for meetings, consultations, or
+                                support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Manager -->
+                <div class="col-md-4">
+                    <div class="service-card"
+                        style="background-image: url('./img/PCPlanning.png'); background-size: cover; background-position: center; color: #fff;">
+                        <div class="overlay"
+                            style="background: rgba(0,0,0,0.5); padding: 20px; height: 100%; border-radius: 12px;">
+                            <h5>Project Management</h5>
+                            <p>Keep your website and projects running smoothly with regular updates, security checks,
+                                and performance optimization.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Estimation CTA -->
+    <section class="online-estimation text-center py-5" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="mb-3">Online Estimation</h2>
+            <p class="mb-4">Know the cost for hiring our engineers every month via online estimation.</p>
+            <a href="get-quote.html" class="btn btn-primary btn-lg">Get Quote</a>
+        </div>
+    </section>
+
+    <!-- Partners & Testimonials Section -->
+    <section class="partners-testimonials py-5" id="partners-testimonials">
+        <div class="container">
+
+            <!-- Partners -->
+            <h2 class="text-center mb-4">Our Partners</h2>
+            <div class="row justify-content-center align-items-center mb-5">
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="./img/PT_Canon.png" class="img-fluid" alt="Partner 1">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="./img/PT_Dell.png" class="img-fluid" alt="Partner 2">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="./img/PT_dentsu.png" class="img-fluid" alt="Partner 3">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="./img/PT_honda.png" class="img-fluid" alt="Partner 4">
+                </div>
+
+            </div>
+
+            <!-- Testimonials -->
+            <h2 class="text-center mb-4 testimon">Testimonials</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner text-center">
+                            <div class="carousel-item active">
+                                <p class="fs-5 fst-italic">"RED Project transformed our website completely. The user
+                                    experience is now seamless and modern!"</p>
+                                <small>- Jane Doe, CEO of ABC Company</small>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="fs-5 fst-italic">"Highly professional team. Our online shop now loads faster
+                                    and looks amazing on mobile!"</p>
+                                <small>- John Smith, Founder of XYZ Store</small>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="fs-5 fst-italic">"The project management and regular updates really helped us
+                                    stay on track."</p>
+                                <small>- Mary Johnson, CTO of Tech Solutions</small>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-3">Let's Improve Your Website</h2>
+            <p class="text-center mb-4">Ready to modernize your website? Send us a message, and we'll help you transform
+                it into a site your users will love.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <input type="text" class="form-control mb-3" placeholder="Your Name">
+                        <input type="email" class="form-control mb-3" placeholder="Your Email">
+                        <textarea rows="4" class="form-control mb-3" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn-light w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Remote Engineer Dispatch (R.E.D.) All rights reserved. Crafted to enhance digital experiences for
+            businesses like
+            yours.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
