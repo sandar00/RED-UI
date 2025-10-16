@@ -154,15 +154,18 @@
     }
 
     .online-estimation .btn-primary {
-        background-color: var(--light);
+        background-color: var(--cta);
         color: var(--dark);
         font-weight: 600;
         transition: 0.3s;
+        border: none;
+        color: var(--light);
+
     }
 
     .online-estimation .btn-primary:hover {
         background-color: var(--accent);
-        color: var(--light);
+        transform: translateY(-2px);
     }
 
     /* end online-estimation */
@@ -209,23 +212,73 @@
 
     /* end partners and testimonials */
 
-    /* Contact */
+    /* start Contact / Online estimates */
     .contact {
         /* background-color: var(--primary); */
-        background: url('./img/BGPIC02_m.png') no-repeat center center/cover;
+        background: linear-gradient(rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.6)), url('./img/BGPIC02_m.png') no-repeat center center/cover;
 
         color: var(--light);
-        padding: 80px 0;
+        padding: 100px 0;
     }
 
-    .contact form input,
-    .contact form textarea {
-        border-radius: 8px;
+    .contact .section-title {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    .contact .section-subtitle {
+        color: #e8e8e8;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .contact-info h5 {
+        color: var(--cta);
+        margin-bottom: 10px;
+    }
+
+    .contact-info ul li {
+        margin-bottom: 6px;
+    }
+
+    .contact-info p {
+        color: #e0e0e0;
+    }
+
+    /* Contact Form (Glass style) */
+    .contact-form {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .contact-form .form-title {
+        color: var(--cta);
+    }
+
+    .contact-form .btn-cta {
+        background-color: var(--cta);
+        color: var(--light);
         border: none;
-        padding: 10px 15px;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 10px 24px;
+        transition: background-color 0.3s, transform 0.2s;
     }
 
-    /* end contact */
+    .contact-form .btn-cta:hover {
+        background-color: var(--accent);
+        transform: translateY(-2px);
+    }
+
+    /* end Contact Online estimates */
 
     /*start Footer */
     footer {
@@ -385,7 +438,7 @@
     </section>
 
     <!-- Partners & Testimonials Section -->
-    <section class="partners-testimonials py-5" id="partners-testimonials">
+    <section class="partners-testimonials py-4" id="partners-testimonials">
         <div class="container">
 
             <!-- Partners -->
@@ -445,24 +498,98 @@
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
+    <!-- Contact / Online Estimate Section -->
+    <section class="contact py-4" id="contact">
         <div class="container">
-            <h2 class="text-center mb-3">Let's Improve Your Website</h2>
-            <p class="text-center mb-4">Ready to modernize your website? Send us a message, and we'll help you transform
-                it into a site your users will love.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form>
-                        <input type="text" class="form-control mb-3" placeholder="Your Name">
-                        <input type="email" class="form-control mb-3" placeholder="Your Email">
-                        <textarea rows="4" class="form-control mb-3" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn-light w-100">Send Message</button>
-                    </form>
+            <div class="text-md-center mb-5">
+                <h2 class="fw-bold section-title">R.E.D. Contact Online Estimate</h2>
+                <p class="section-subtitle">
+                    Get an instant project estimate and discover how our engineers can accelerate your development.
+                    Tell us your need! we’ll tailor a plan that fits your goals perfectly.
+                </p>
+            </div>
+
+            <div class="row align-items-start justify-content-center">
+                <!-- Left Info -->
+                <div class="col-lg-5 mb-5 mb-lg-0 contact-info">
+                    <h5 class="fw-semibold">Full-Time Developers We Offer</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Back-end:</strong> PHP, Java, .NET and more</li>
+                        <li><strong>Mobile:</strong> iOS & Android development</li>
+                    </ul>
+
+                    <h5 class="fw-semibold mt-4">Specialists Charged by Hours</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Front-end:</strong> UI/UX Designer, Developer</li>
+                        <li><strong>Specialists:</strong> Contingency, Translator</li>
+                    </ul>
+
+                    <p class="mt-4 small">
+                        Not sure what’s right for your project? Fill out the form, and our team will review your
+                        requirements and get back to you with tailored recommendations.
+                    </p>
                 </div>
+
+                <!-- Right Form -->
+                <div class="col-lg-6">
+                    <div class="contact-form card border-0 rounded-4 shadow-lg">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-4 form-title">Get Quote</h4>
+
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Name *</label>
+                                    <input type="text" class="form-control rounded-3" placeholder="Your Name" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Company *</label>
+                                    <input type="text" class="form-control rounded-3" placeholder="Your Company"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Email *</label>
+                                    <input type="email" class="form-control rounded-3" placeholder="you@example.com"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Country *</label>
+                                    <select class="form-select rounded-3" required>
+                                        <option value="">Please choose an option</option>
+                                        <option>Myanmar</option>
+                                        <option>Thailand</option>
+                                        <option>Singapore</option>
+                                        <option>Japan</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Phone *</label>
+                                    <input type="tel" class="form-control rounded-3" placeholder="+959123456789"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Inquiry *</label>
+                                    <textarea class="form-control rounded-3" rows="3"
+                                        placeholder="Tell us your project needs..." required></textarea>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-cta">SEND</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
