@@ -89,7 +89,6 @@
     /* start Services */
     .service-card {
         height: 200px;
-        /* adjust card height */
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
@@ -167,7 +166,9 @@
         margin-bottom: 40px;
     }
 
-    .partners-testimonials h2.testimon {}
+    .partners-testimonials h2.testimon {
+
+    }
 
     .partners-testimonials .row img {
         width: 100px;
@@ -192,15 +193,12 @@
         border-radius: 50%;
         background-size: 50%, 50%;
     }
-
-
     /* end partners and testimonials */
 
     /* start Contact / Online estimates */
     .contact {
         /* background-color: var(--primary); */
         background: linear-gradient(rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.6)), url('./img/BGPIC02_m.png') no-repeat center center/cover;
-
         color: var(--light);
         padding: 100px 0;
     }
@@ -230,7 +228,7 @@
         color: #e0e0e0;
     }
 
-    /* Contact Form (Glass style) */
+    /* Contact Form */
     .contact-form {
         background: rgba(255, 255, 255, 0.9);
         border-radius: 16px;
@@ -309,9 +307,7 @@
         color: #bfbfbf;
     }
 
-    /* Bootstrap icon spacing */
     .footer i {
         color: var(--cta);
     }
-
     /* end Footer */
